@@ -14,8 +14,6 @@ spec:
     spec:
       nodeSelector:
         team: dev
-        env: tst
-        critical: no
       containers:
       - name: web-container
         image: nginx:latest
@@ -38,7 +36,6 @@ spec:
     spec:
       nodeSelector:
         env: stg
-        critical: no
       containers:
       - name: sync-api-container
         image: nginx:latest
@@ -60,8 +57,7 @@ spec:
         app: shopping-cart-app
     spec:
       nodeSelector:
-        team: dev
-        critical: yes
+        team: sre
       containers:
       - name: shopping-cart-container
         image: nginx:latest
@@ -83,8 +79,7 @@ spec:
         app: backend-processor
     spec:
       nodeSelector:
-        team: sre
-        env: tst
+        critical: yes
       containers:
       - name: backend-processor-container
         image: nginx:latest
