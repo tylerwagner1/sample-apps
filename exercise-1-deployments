@@ -13,7 +13,7 @@ spec:
         app: web-app
     spec:
       nodeSelector:
-        team: "dev"
+        team: "developers"
         critical: "yes"
       containers:
       - name: web-container
@@ -36,7 +36,7 @@ spec:
         app: sync-api
     spec:
       nodeSelector:
-        env: "stg"
+        env: "staging"
       containers:
       - name: sync-api-container
         image: nginx:latest
@@ -58,8 +58,8 @@ spec:
         app: shopping-cart-app
     spec:
       nodeSelector:
-        team: "dev"
-        env: "stg"
+        team: "developers"
+        env: "staging"
       containers:
       - name: shopping-cart-container
         image: nginx:latest
@@ -81,8 +81,8 @@ spec:
         app: backend-processor
     spec:
       nodeSelector:
-        team: "dev"
-        env: "stg"
+        team: "developers"
+        env: "staging"
         critical: "yes"
       containers:
       - name: backend-processor-container
