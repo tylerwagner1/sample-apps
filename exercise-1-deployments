@@ -89,3 +89,27 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 9000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: queue-builder
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: queue-builder
+  template:
+    metadata:
+      labels:
+        app: queue-builder
+    spec:
+      nodeSelector:
+        team: "developers"
+        env: "staging"
+        critical: "no"
+      containers:
+      - name:queue-builder-container
+        image: nginx:latest
+        ports:
+        - containerPort: 9000
