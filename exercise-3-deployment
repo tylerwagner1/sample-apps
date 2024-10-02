@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sole-tenant-app
+  labels:
+    app: sole-tenant-app
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: sole-tenant-app
+  template:
+    metadata:
+      labels:
+        app: sole-tenant-app
+    spec:
+      nodeSelector:
+        template: sole-tenant
+      containers:
+      - name: sole-tenant-container
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "3"
