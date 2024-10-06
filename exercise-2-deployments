@@ -13,6 +13,8 @@ spec:
       labels:
         app: backend-api
     spec:
+      nodeSelector:
+        app: backend-api
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
