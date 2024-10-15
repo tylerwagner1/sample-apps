@@ -109,7 +109,7 @@ spec:
         env: "staging"
         critical: "no"
       containers:
-      - name:queue-builder-container
+      - name: queue-builder-container
         image: nginx:latest
         ports:
         - containerPort: 9000
